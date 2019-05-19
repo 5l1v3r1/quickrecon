@@ -1,0 +1,59 @@
+QuickRecon v0.3.2 (GNU GPLv3)
+
+   Filip Szymański
+   f.szymanski@hotmail.com
+   http://code.google.com/p/quickrecon/
+
+ * Please note that this tool was created and published for educational purposes only. *
+
+
+
+Description:
+------------
+
+QuickRecon is a simple information gathering tool that allows you to:
+- bruteforce subdomains
+- perform zone transfer
+- gather email addresses from 'google.com', 'groups.google.com' and 'bing.com'
+- find human relationships using XHTML Friends Network
+- check a host (IP) in Shodan search engine database
+
+
+
+Requires:
+---------
+
+GUI in 'QuickRecon' is based on 'PyQt4' toolkit <http://www.riverbankcomputing.co.uk/software/pyqt/> written by Phil Thompson.
+'Relationships' mode requires HTML/XML parser 'BeautifulSoup' <http://www.crummy.com/software/BeautifulSoup/> written by Leonard Richardson.
+'Zone transfer' mode depends on DNS toolkit 'dnspython' <http://www.dnspython.org/> written by Bob Halley.
+To use 'Shodan' mode you need 'shodan-python' library <https://github.com/achillean/shodan-python/> primary written by John Matherly.
+
+Tested on Windows 7 and Kubuntu 11.04 with Python 2.7.2.
+
+
+
+Note:
+-----
+
+An API key is required to access the Shodan database, get yours at <http://www.shodanhq.com/account/login> for free.
+Key can be stored in the 'shodan_key.cfg' file or directly entered in the GUI.
+
+
+
+Installation (Debian/Ubuntu):
+-----------------------------
+
+# apt-get install python-qt4
+# apt-get install python-beautifulsoup
+# apt-get install python-dnspython
+# apt-get install git-core
+$ git clone https://github.com/achillean/shodan-python
+$ cd shodan-python
+# python setup.py install
+$ cd ./..
+$ wget http://quickrecon.googlecode.com/files/quickrecon_gui-0.3.2.tar.gz
+$ tar xvzf quickrecon_gui-0.3.2.tar.gz
+$ cd quickrecon_gui-0.3.2
+$ python quickrecon_gui.pyw
+
+
